@@ -1,5 +1,469 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="utf-8"><title>Dani Justus</title>
-<meta http-equiv="refresh" content="0; url=https://danijustus.art/">
-<script>location.replace("https://danijustus.art/");</script></head>
-<body><a href="https://danijustus.art/">danijustus.art</a></body></html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dani Justus | Fotografia analógica em caixas de acrílico</title>
+<meta name="description" content="Fotografias analógicas do Rio de Janeiro em caixas de acrílico. Janelas para o Rio e Cartas ao Mar, por Dani Justus.">
+<meta property="og:title" content="Dani Justus | Arte para presentear">
+<meta property="og:description" content="Fotografias analógicas do Rio de Janeiro em caixas de acrílico.">
+<meta property="og:site_name" content="Dani Justus">
+<meta property="og:url" content="https://loja.danijustus.art/">
+<meta property="og:image" content="https://loja.danijustus.art/pages/janelas-nikonos-34.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #ECECEC; color: #1E1E1E; font-family: 'Open Sans', sans-serif; overflow-x: hidden; }
+  a { color: #1E1E1E; }
+  ::selection { background: #1E1E1E; color: #fff; }
+  img { max-width: 100%; display: block; }
+  p { font-size: 17px; line-height: 1.75; color: #3C3C3C; margin: 0 0 18px; }
+  .faixa { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
+
+  /* Título no padrão da apresentação: palavra grande, complemento com fio */
+  .titulo { margin: 0 0 30px; font-weight: 400; }
+  .titulo .grande { display: block; font-family: 'Raleway', sans-serif; font-weight: 300; font-size: clamp(38px, 6.4vw, 68px); letter-spacing: .14em; line-height: 1.05; text-transform: uppercase; color: #1E1E1E; }
+  .titulo .sub { display: flex; align-items: center; gap: 18px; margin-top: 12px; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: clamp(13px, 1.5vw, 16px); letter-spacing: .5em; text-transform: uppercase; color: #1E1E1E; }
+  .titulo .sub::after { content: ""; flex: 0 1 150px; height: 1px; background: #1E1E1E; }
+  .frase { font-style: italic; font-size: 20px; line-height: 1.6; color: #1E1E1E; margin-bottom: 24px; }
+
+  .quina { width: 54px; height: 54px; background: #DDD0BE; }
+  .topo { display: flex; justify-content: space-between; align-items: flex-start; padding: 0 48px 0 0; max-width: 1120px; margin: 0 auto; }
+  .topo .marca { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .22em; text-transform: uppercase; text-decoration: none; padding-top: 30px; }
+
+  .dupla { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .abertura { padding-top: clamp(40px, 6vw, 80px); padding-bottom: clamp(64px, 9vw, 120px); }
+  .secao { padding-top: clamp(64px, 9vw, 120px); padding-bottom: clamp(64px, 9vw, 120px); }
+
+  .objeto { background: #E6E0D8; padding: 30px 34px; margin-top: 34px; }
+  .objeto p { margin-bottom: 10px; }
+  .objeto p:last-child { margin-bottom: 0; }
+
+  .cabeca-obras { display: flex; justify-content: flex-end; align-items: center; gap: 22px; padding-bottom: 44px; }
+  .cabeca-obras span { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: clamp(18px, 2.4vw, 24px); letter-spacing: .36em; text-transform: uppercase; }
+  .cabeca-obras::after { content: ""; width: 90px; height: 1px; background: #1E1E1E; }
+
+  .obras { display: grid; grid-template-columns: 1fr 1fr; gap: 72px 56px; }
+  .troca { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; }
+  .troca img, .obra > img { width: 100%; }
+  .legenda { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin: 16px 0 14px; }
+  .legenda .nome { font-weight: 700; font-size: 19px; line-height: 1.4; color: #1E1E1E; margin: 0; }
+  .legenda .onde { font-size: 13px; line-height: 1.5; text-align: right; color: #1E1E1E; margin: 0; }
+  .venda { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .venda p { margin: 0; color: #1E1E1E; }
+
+  .botao { display: inline-block; border: 1px solid #1E1E1E; color: #1E1E1E; background: transparent; text-decoration: none; padding: 12px 30px; font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 16px; letter-spacing: .08em; transition: background .2s, color .2s; }
+  .botao:hover { background: #1E1E1E; color: #fff; }
+  .botao.cheio { background: #1E1E1E; color: #fff; }
+
+  .maiores { display: flex; justify-content: space-between; align-items: center; gap: 28px; flex-wrap: wrap; margin-top: 80px; }
+  .maiores > div { flex: 1 1 320px; }
+  .zap { position: fixed; right: 20px; bottom: 20px; z-index: 10; background: #1E1E1E; color: #fff; text-decoration: none; padding: 13px 24px; border-radius: 999px; font-family: 'Raleway', sans-serif; font-size: 15px; letter-spacing: .06em; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
+  .zap:hover { background: #3C3C3C; color: #fff; }
+  .frete { font-size: 14px; color: #3C3C3C; }
+  button.botao { cursor: pointer; }
+  #pedido { border: 0; padding: 0; width: min(520px, calc(100vw - 32px)); max-height: calc(100vh - 32px); background: #ECECEC; color: #1E1E1E; font-family: 'Open Sans', sans-serif; overflow-y: auto; }
+  #pedido::backdrop { background: rgba(30,30,30,.55); }
+  #pedido form { padding: 30px 24px 26px; }
+  #pedido h2 { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 26px; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 8px; }
+  #pedido .resumo { font-size: 16px; margin: 0 0 20px; }
+  #pedido label { display: block; font-size: 15px; color: #3C3C3C; margin: 0 0 14px; }
+  #pedido input { display: block; width: 100%; margin-top: 5px; padding: 12px; font-size: 16px; font-family: inherit; color: #1E1E1E; background: #fff; border: 1px solid #B5B5B5; border-radius: 0; }
+  #pedido input:focus { outline: 2px solid #1E1E1E; outline-offset: 0; }
+  #pedido .linha { display: flex; gap: 12px; }
+  #pedido .linha label { flex: 1; min-width: 0; }
+  #pedido .estreito { flex: 0 0 90px !important; }
+  #pedido .aviso { font-size: 14px; margin: 4px 0 16px; }
+  #pedido .erro { font-size: 14px; color: #A3123A; margin: 0 0 12px; min-height: 1em; }
+  #pedido .enviar { width: 100%; background: #1E1E1E; color: #fff; border: 0; padding: 16px; font-size: 16px; font-family: 'Raleway', sans-serif; letter-spacing: .08em; cursor: pointer; }
+  #pedido .enviar:disabled { opacity: .6; cursor: wait; }
+  #pedido .fechar { position: absolute; top: 8px; right: 8px; background: none; border: 0; font-size: 28px; line-height: 1; color: #1E1E1E; cursor: pointer; padding: 6px 10px; }
+  .clara { background: #F4F4F3; }
+
+  .infos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding-top: 56px; padding-bottom: 80px; }
+  .infos h3 { font-family: 'Open Sans', sans-serif; font-weight: 700; font-size: 17px; margin: 0 0 8px; }
+  .infos p { font-size: 16px; margin: 0; }
+
+  .sobre { display: grid; grid-template-columns: 280px 1fr; gap: 64px; align-items: center; }
+  .rodape { display: flex; justify-content: space-between; align-items: flex-end; max-width: 1120px; margin: 0 auto; padding: 40px 0 0 48px; }
+  .rodape p { font-size: 15px; margin: 0 0 22px; }
+
+  @media (max-width: 820px) {
+    .faixa { padding: 0 22px; }
+    .topo { padding-right: 22px; }
+    .quina { width: 40px; height: 40px; }
+    .topo .marca { padding-top: 20px; font-size: 12px; }
+    .dupla, .obras, .sobre { grid-template-columns: 1fr; gap: 36px; }
+    .obras { gap: 56px; }
+    .infos { grid-template-columns: 1fr 1fr; gap: 30px 22px; }
+    .sobre img { max-width: 220px; }
+    .titulo .sub { letter-spacing: .36em; }
+    .cabeca-obras span { letter-spacing: .24em; }
+    .rodape { padding-left: 22px; }
+  }
+</style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1060315336275430');
+fbq('track', 'PageView');
+</script>
+<!-- Fim Meta Pixel -->
+</head>
+<body>
+
+<!-- TOPO -->
+<header class="topo">
+  <div class="quina"></div>
+  <a class="marca" href="https://danijustus.art/">Dani Justus | Fotografia</a>
+</header>
+
+<!-- ABERTURA -->
+<section class="faixa abertura dupla">
+  <div>
+    <h1 class="titulo"><span class="grande">Arte</span><span class="sub">para presentear</span></h1>
+    <p style="font-size:19px;">Fotografias analógicas do Rio de Janeiro em caixas de acrílico.</p>
+    <p class="frase" style="margin-bottom:34px;">Encomendas de Natal até 10/12 para envio a todo o Brasil e até 16/12 para entrega no Rio.</p>
+    <a class="botao" href="#obras">Ver as obras</a>
+  </div>
+  <img src="pages/janelas-nikonos-34.jpg" alt="Caixa de acrílico com a fotografia Roda Mundo, vista de lado">
+</section>
+
+<!-- JANELAS PARA O RIO -->
+<section id="janelas" class="clara">
+  <div class="faixa secao dupla" style="align-items:start;">
+    <div>
+      <h2 class="titulo"><span class="grande">Janelas</span><span class="sub">para o Rio</span></h2>
+      <p class="frase">Um presente para quem já viveu o Rio de Janeiro em seu melhor.</p>
+      <p>Chamo estas peças de janelas porque é isso que elas fazem: abrem, sobre uma mesa ou uma estante, uma vista da cidade e nos lembram do que é viver o Rio.</p>
+      <p style="margin:0;">Com tamanho 18 × 18 cm, elas podem ser usadas em paredes, estantes e mesas de centro, e mudam de lugar com você.</p>
+    </div>
+    <div>
+      <div class="objeto">
+        <p style="font-weight:700; color:#1E1E1E;">O objeto</p>
+        <p>Fotografia analógica impressa em papel algodão fine art.</p>
+        <p>Montagem em caixa de acrílico, formato quadrado.</p>
+        <p>A imagem permanece solta e flutua dentro da caixa.</p>
+        <p>Edição numerada, com certificado assinado pela artista.</p>
+      </div>
+      <p style="margin:26px 0 0; color:#1E1E1E;">R$ 900 cada. Frete de R$ 50 para todo o Brasil.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OBRAS -->
+<section id="obras" class="faixa secao">
+  <div class="cabeca-obras"><span>Obras disponíveis</span></div>
+  <p style="margin:-18px 0 44px; text-align:right; font-size:15px;">Toque na foto para ver a caixa de lado.</p>
+
+  <div class="obras">
+
+    <div class="obra">
+      <button type="button" class="troca" aria-label="Ver a outra vista da caixa"><img loading="lazy" src="pages/janelas-nikonos.jpg" data-frente="pages/janelas-nikonos.jpg" data-lado="pages/janelas-nikonos-34.jpg" alt="Roda Mundo, fotografia analógica em preto e branco de um mergulho no mar de Ipanema, em caixa de acrílico"></button>
+      <div class="legenda">
+        <p class="nome">Roda Mundo</p>
+        <p class="onde">Dezembro/2023<br>Ipanema, Rio de Janeiro</p>
+      </div>
+      <div class="venda">
+        <p>R$ 900<br><span class="frete">+ R$ 50 de frete fixo para todo o Brasil</span></p>
+        <button type="button" class="botao" data-comprar="Roda Mundo">Comprar</button>
+      </div>
+    </div>
+
+    <div class="obra">
+      <button type="button" class="troca" aria-label="Ver a outra vista da caixa"><img loading="lazy" src="pages/janelas-arpoador.jpg" data-frente="pages/janelas-arpoador.jpg" data-lado="pages/janelas-arpoador-34.jpg" alt="Arpoador II, fotografia analógica em preto e branco do mar com o morro Dois Irmãos ao fundo, em caixa de acrílico"></button>
+      <div class="legenda">
+        <p class="nome">Arpoador II</p>
+        <p class="onde">Março/2024<br>Arpoador, Rio de Janeiro</p>
+      </div>
+      <div class="venda">
+        <p>R$ 900<br><span class="frete">+ R$ 50 de frete fixo para todo o Brasil</span></p>
+        <button type="button" class="botao" data-comprar="Arpoador II">Comprar</button>
+      </div>
+    </div>
+
+    <div class="obra">
+      <button type="button" class="troca" aria-label="Ver a outra vista da caixa"><img loading="lazy" src="pages/janelas-pqdoisirmaos.jpg" data-frente="pages/janelas-pqdoisirmaos.jpg" data-lado="pages/janelas-pqdoisirmaos-34.jpg" alt="Parque Dois Irmãos, fotografia analógica em preto e branco da orla vista do alto, em caixa de acrílico"></button>
+      <div class="legenda">
+        <p class="nome">Parque Dois Irmãos</p>
+        <p class="onde">Dezembro/2024<br>Leblon, Rio de Janeiro</p>
+      </div>
+      <div class="venda">
+        <p>R$ 900<br><span class="frete">+ R$ 50 de frete fixo para todo o Brasil</span></p>
+        <button type="button" class="botao" data-comprar="Parque Dois Irmãos">Comprar</button>
+      </div>
+    </div>
+
+    <div class="obra">
+      <button type="button" class="troca" aria-label="Ver a outra vista da caixa"><img loading="lazy" src="pages/janelas-jbeleme.jpg" data-frente="pages/janelas-jbeleme.jpg" data-lado="pages/janelas-jbeleme-34.jpg" alt="Jardim Botânico, fotografia analógica em preto e branco com dupla exposição de árvores e uma palmeira, em caixa de acrílico"></button>
+      <div class="legenda">
+        <p class="nome">Jardim Botânico</p>
+        <p class="onde">Abril/2024<br>Jardim Botânico, Rio de Janeiro</p>
+      </div>
+      <div class="venda">
+        <p>R$ 900<br><span class="frete">+ R$ 50 de frete fixo para todo o Brasil</span></p>
+        <button type="button" class="botao" data-comprar="Jardim Botânico">Comprar</button>
+      </div>
+    </div>
+
+    <div class="obra">
+      <button type="button" class="troca" aria-label="Ver a outra vista da caixa"><img loading="lazy" src="pages/janelas-onda.jpg" data-frente="pages/janelas-onda.jpg" data-lado="pages/janelas-onda-34.jpg" alt="Onda, fotografia analógica em preto e branco de uma onda quebrando, em caixa de acrílico"></button>
+      <div class="legenda">
+        <p class="nome">Onda</p>
+        <p class="onde">Dezembro/2023<br>Leblon, Rio de Janeiro</p>
+      </div>
+      <div class="venda">
+        <p>R$ 900<br><span class="frete">+ R$ 50 de frete fixo para todo o Brasil</span></p>
+        <button type="button" class="botao" data-comprar="a caixa Onda">Comprar</button>
+      </div>
+    </div>
+
+    <div class="obra">
+      <button type="button" class="troca" aria-label="Ver a outra vista da caixa"><img loading="lazy" src="pages/janelas-arpoador1.jpg" data-frente="pages/janelas-arpoador1.jpg" data-lado="pages/janelas-arpoador1-34.jpg" alt="Arpoador I, fotografia analógica em preto e branco das pedras do Arpoador com o morro Dois Irmãos ao fundo, em caixa de acrílico"></button>
+      <div class="legenda">
+        <p class="nome">Arpoador I</p>
+        <p class="onde">Janeiro/2026<br>Arpoador, Rio de Janeiro</p>
+      </div>
+      <div class="venda">
+        <p>R$ 900<br><span class="frete">+ R$ 50 de frete fixo para todo o Brasil</span></p>
+        <button type="button" class="botao" data-comprar="a caixa Arpoador I">Comprar</button>
+      </div>
+    </div>
+
+    <div class="obra">
+      <button type="button" class="troca" aria-label="Ver a outra vista da caixa"><img loading="lazy" src="pages/janelas-surfistas.jpg" data-frente="pages/janelas-surfistas.jpg" data-lado="pages/janelas-surfistas-34.jpg" alt="Surfistas no Arpoador, fotografia analógica em preto e branco de surfistas no mar com o morro Dois Irmãos ao fundo, em caixa de acrílico"></button>
+      <div class="legenda">
+        <p class="nome">Surfistas no Arpoador</p>
+        <p class="onde">Janeiro/2026<br>Arpoador, Rio de Janeiro</p>
+      </div>
+      <div class="venda">
+        <p>R$ 900<br><span class="frete">+ R$ 50 de frete fixo para todo o Brasil</span></p>
+        <button type="button" class="botao" data-comprar="Surfistas no Arpoador">Comprar</button>
+      </div>
+    </div>
+
+    <div class="obra">
+      <button type="button" class="troca" aria-label="Ver a outra vista da caixa"><img loading="lazy" src="pages/janelas-vista.jpg" data-frente="pages/janelas-vista.jpg" data-lado="pages/janelas-vista-34.jpg" alt="Depois da Chuva, fotografia analógica em preto e branco do morro Dois Irmãos visto da Vista Chinesa, em caixa de acrílico"></button>
+      <div class="legenda">
+        <p class="nome">Depois da Chuva</p>
+        <p class="onde">Janeiro/2026<br>Vista Chinesa, Rio de Janeiro</p>
+      </div>
+      <div class="venda">
+        <p>R$ 900<br><span class="frete">+ R$ 50 de frete fixo para todo o Brasil</span></p>
+        <button type="button" class="botao" data-comprar="Depois da Chuva">Comprar</button>
+      </div>
+    </div>
+
+    <div class="obra">
+      <button type="button" class="troca" aria-label="Ver a outra vista da caixa"><img loading="lazy" src="pages/janelas-floresta.jpg" data-frente="pages/janelas-floresta.jpg" data-lado="pages/janelas-floresta-34.jpg" alt="Jardim Botânico II, fotografia analógica em preto e branco, dupla exposição de floresta com o Cristo Redentor ao fundo, em caixa de acrílico"></button>
+      <div class="legenda">
+        <p class="nome">Jardim Botânico II</p>
+        <p class="onde">Abril/2024<br>Jardim Botânico, Rio de Janeiro</p>
+      </div>
+      <div class="venda">
+        <p>R$ 900<br><span class="frete">+ R$ 50 de frete fixo para todo o Brasil</span></p>
+        <button type="button" class="botao" data-comprar="Jardim Botânico II">Comprar</button>
+      </div>
+    </div>
+
+    <div class="obra">
+      <button type="button" class="troca" aria-label="Ver a outra vista da caixa"><img loading="lazy" src="pages/janelas-colorida.jpg" data-frente="pages/janelas-colorida.jpg" data-lado="pages/janelas-colorida-34.jpg" alt="Sem título, fotografia analógica colorida, dupla exposição de banhistas na praia, em caixa de acrílico"></button>
+      <div class="legenda">
+        <p class="nome">Sem título</p>
+        <p class="onde">Abril/2026<br>Rio de Janeiro</p>
+      </div>
+      <div class="venda">
+        <p>R$ 900<br><span class="frete">+ R$ 50 de frete fixo para todo o Brasil</span></p>
+        <button type="button" class="botao" data-comprar="Sem título">Comprar</button>
+      </div>
+    </div>
+
+    <div class="obra">
+      <img loading="lazy" src="pages/janelas-praiajb.jpg" alt="Meu bem, meu mal, fotografia analógica em preto e branco com dupla exposição da praia e do morro Dois Irmãos, em caixa de acrílico">
+      <div class="legenda">
+        <p class="nome">Meu bem, meu mal</p>
+        <p class="onde">Março/2024<br>Leblon, Rio de Janeiro</p>
+      </div>
+      <div class="venda">
+        <p>Esgotado</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="objeto maiores">
+    <div>
+      <p style="font-weight:700; color:#1E1E1E;">Formatos maiores</p>
+      <p>As fotografias da série também podem ser impressas em formatos maiores. Entre em contato para informações.</p>
+    </div>
+    <a class="botao" data-contato="1" href="https://wa.me/5521998733496?text=Ol%C3%A1%21%20Quero%20informa%C3%A7%C3%B5es%20sobre%20formatos%20maiores%20das%20fotografias." target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+  </div>
+</section>
+
+<!-- CARTAS AO MAR -->
+<section id="cartas" class="clara">
+  <div class="faixa secao dupla">
+    <img loading="lazy" src="pages/cartasaomar-trio-aparador.jpg" alt="As três obras em acrílico amarelo, violeta e rosa sobre um aparador de madeira, com o Pão de Açúcar na janela" style="width:100%;">
+    <div>
+      <h2 class="titulo"><span class="grande">Cartas</span><span class="sub">ao mar</span></h2>
+      <p class="frase">Morri de Amor, Morri de Saudade, Não Morri de Vontade.</p>
+      <p style="margin-bottom:32px;">Três fotografias analógicas montadas em acrílico colorido, em parceria com a Casa Proeza. R$ 590 cada.</p>
+      <a class="botao" href="https://loja.danijustus.art/pages/cartasaomar">Ver as três obras</a>
+    </div>
+  </div>
+</section>
+
+<!-- ESTÚDIO -->
+<section id="estudio" class="faixa secao" style="max-width:820px;">
+  <h2 class="titulo"><span class="grande">Estúdio</span><span class="sub">venha escolher</span></h2>
+  <p style="font-size:19px;">As caixas ficam no meu estúdio, no Jardim Botânico. Você pode ver de perto, escolher e levar na hora.</p>
+  <p style="font-size:19px;">No dia 3 de dezembro o estúdio fica de portas abertas, a partir das 13h. Em outros dias, é só agendar.</p>
+  <p style="margin-bottom:34px;">Rua Lopes Quintas, 53, casa 1, Jardim Botânico, Rio de Janeiro.</p>
+  <a class="botao cheio" data-visita="1" href="https://wa.me/5521998733496?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20visita%20ao%20est%C3%BAdio%20para%20ver%20as%20caixas." target="_blank" rel="noopener">Agendar visita</a>
+</section>
+
+<!-- COMO FUNCIONA -->
+<div class="faixa"><div style="height:1px; background:#1E1E1E; width:150px;"></div></div>
+<section class="faixa infos">
+  <div>
+    <h3>Prazos de Natal</h3>
+    <p>Encomendas até 10/12 para envio e até 16/12 para entrega no Rio.</p>
+  </div>
+  <div>
+    <h3>Autenticidade</h3>
+    <p>Edição numerada, com certificado assinado pela artista.</p>
+  </div>
+  <div>
+    <h3>Pagamento</h3>
+    <p>Pix ou cartão de crédito, em até 3 vezes, pelo Mercado Pago.</p>
+  </div>
+  <div>
+    <h3>Entrega</h3>
+    <p>Produção em até 7 dias + prazo de entrega dos Correios. Frete fixo de R$ 50 por caixa para todo o Brasil, ou retirada no estúdio.</p>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="clara">
+  <div class="faixa secao sobre">
+    <img loading="lazy" src="pages/cartasaomar-dani.jpg" alt="Dani Justus fotografando com uma Mamiya 645" style="width:100%;">
+    <div>
+      <h2 class="titulo"><span class="grande" style="font-size:clamp(30px,4.4vw,46px);">Dani Justus</span><span class="sub">fotógrafa</span></h2>
+      <p>Fotógrafa brasileira, baseada no Rio de Janeiro, com mais de duas décadas de atuação profissional.</p>
+      <p style="margin:0;">Utilizando câmeras antigas, filmes vencidos, múltiplas exposições e processos experimentais, a artista incorpora o erro, o acaso e as instabilidades do material como partes indissociáveis da obra.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="rodape">
+  <p><a href="https://www.instagram.com/danijustus.art/" target="_blank" rel="noopener">@danijustus.art</a></p>
+  <div class="quina"></div>
+</footer>
+
+<a class="zap" data-contato="1" href="https://wa.me/5521998733496?text=Ol%C3%A1%21%20Vi%20as%20caixas%20de%20acr%C3%ADlico%20e%20quero%20saber%20mais." target="_blank" rel="noopener">WhatsApp</a>
+
+<dialog id="pedido" aria-labelledby="pedido-titulo">
+  <button type="button" class="fechar" aria-label="Fechar">&times;</button>
+  <form id="pedido-form" novalidate>
+    <h2 id="pedido-titulo">Seu pedido</h2>
+    <p class="resumo" id="pedido-resumo"></p>
+    <label>Nome completo<input name="nome" autocomplete="name" required></label>
+    <div class="linha">
+      <label>WhatsApp<input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(21) 99999-9999" required></label>
+      <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
+    </div>
+    <label style="max-width:200px;">CEP<input name="cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" required></label>
+    <div class="linha">
+      <label>Endereço<input name="endereco" autocomplete="address-line1" required></label>
+      <label class="estreito">Número<input name="numero" required></label>
+    </div>
+    <label>Complemento<input name="complemento" autocomplete="address-line2"></label>
+    <label>Bairro<input name="bairro" required></label>
+    <div class="linha">
+      <label>Cidade<input name="cidade" autocomplete="address-level2" required></label>
+      <label class="estreito">UF<input name="uf" maxlength="2" autocomplete="address-level1" required></label>
+    </div>
+    <p class="aviso">Frete fixo de R$ 50 para todo o Brasil. Produção em até 7 dias + prazo de entrega dos Correios. Na próxima tela você paga com Pix ou cartão pelo Mercado Pago.</p>
+    <p class="erro" id="pedido-erro" role="alert"></p>
+    <button type="submit" class="enviar">Ir para o pagamento</button>
+  </form>
+</dialog>
+
+<script>
+(function () {
+  var PLANILHA = 'https://script.google.com/macros/s/AKfycbwVMkxAPdDLWIR8yIAjF7bXVyx177gVL4NK6sFcbljflLOGwxq_wfMjYPsoJZ18zcMwXw/exec';
+  var LINK = 'https://mpago.li/2ra7G6K';
+  var VALOR = 900, FRETE = 50;
+  var dlg = document.getElementById('pedido');
+  var form = document.getElementById('pedido-form');
+  var erro = document.getElementById('pedido-erro');
+  var atual = null;
+  function brl(n) { return 'R$ ' + n.toLocaleString('pt-BR', { minimumFractionDigits: 2 }); }
+
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('.troca');
+    if (t) {
+      var i = t.querySelector('img');
+      var lado = i.getAttribute('src') === i.getAttribute('data-frente');
+      i.setAttribute('src', i.getAttribute(lado ? 'data-lado' : 'data-frente'));
+      return;
+    }
+    var b = e.target.closest('[data-comprar]');
+    if (b) {
+      atual = b.getAttribute('data-comprar');
+      document.getElementById('pedido-resumo').textContent =
+        atual + ': ' + brl(VALOR) + ' + ' + brl(FRETE) + ' de frete = ' + brl(VALOR + FRETE);
+      erro.textContent = '';
+      dlg.showModal();
+      if (window.fbq) fbq('track', 'AddToCart', { content_name: 'Janelas para o Rio: ' + atual, content_category: 'Fine Art', currency: 'BRL', value: VALOR });
+      return;
+    }
+    if (!window.fbq) return;
+    if (e.target.closest('[data-contato]')) fbq('track', 'Contact', { content_name: 'WhatsApp' });
+    if (e.target.closest('[data-visita]')) fbq('track', 'Schedule', { content_name: 'Visita ao estúdio' });
+  });
+  dlg.querySelector('.fechar').addEventListener('click', function () { dlg.close(); });
+
+  var cep = form.elements.cep;
+  cep.addEventListener('blur', function () {
+    var c = cep.value.replace(/\D/g, '');
+    if (c.length !== 8) return;
+    fetch('https://viacep.com.br/ws/' + c + '/json/').then(function (r) { return r.json(); }).then(function (d) {
+      if (d.erro) return;
+      if (!form.elements.endereco.value) form.elements.endereco.value = d.logradouro || '';
+      if (!form.elements.bairro.value) form.elements.bairro.value = d.bairro || '';
+      form.elements.cidade.value = d.localidade || form.elements.cidade.value;
+      form.elements.uf.value = d.uf || form.elements.uf.value;
+      form.elements.numero.focus();
+    }).catch(function () {});
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var falta = Array.prototype.find.call(form.elements, function (el) { return el.required && !el.value.trim(); });
+    if (falta) { erro.textContent = 'Preencha todos os campos obrigatórios.'; falta.focus(); return; }
+    if (!/\S+@\S+\.\S+/.test(form.elements.email.value)) { erro.textContent = 'Confira o e-mail.'; form.elements.email.focus(); return; }
+    var dados = new URLSearchParams(new FormData(form));
+    dados.append('obra', 'Janelas para o Rio: ' + atual);
+    dados.append('valor', VALOR + FRETE);
+    var btn = form.querySelector('.enviar');
+    btn.disabled = true; btn.textContent = 'Abrindo o pagamento...';
+    if (window.fbq) fbq('track', 'Lead', { content_name: 'Janelas para o Rio: ' + atual, content_category: 'Fine Art', currency: 'BRL', value: VALOR });
+    if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: 'Janelas para o Rio: ' + atual, content_category: 'Fine Art', currency: 'BRL', value: VALOR + FRETE, num_items: 1 });
+    var ir = function () { window.location.href = LINK; };
+    fetch(PLANILHA, { method: 'POST', mode: 'no-cors', body: dados }).then(ir, ir);
+    setTimeout(ir, 2500);
+  });
+})();
+</script>
+
+</body>
+</html>
