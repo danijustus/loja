@@ -82,6 +82,12 @@
   #pedido .enviar { width: 100%; background: #1E1E1E; color: #fff; border: 0; padding: 16px; font-size: 16px; font-family: 'Raleway', sans-serif; letter-spacing: .08em; cursor: pointer; }
   #pedido .enviar:disabled { opacity: .6; cursor: wait; }
   #pedido .fechar { position: absolute; top: 8px; right: 8px; background: none; border: 0; font-size: 28px; line-height: 1; color: #1E1E1E; cursor: pointer; padding: 6px 10px; }
+  .opcoes { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .opcao { display: flex; flex-direction: column; align-items: flex-start; text-decoration: none; color: #1E1E1E; }
+  .opcao img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; margin-bottom: 22px; }
+  .opcao-nome { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: clamp(24px, 3vw, 32px); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 10px; }
+  .opcao-texto { font-size: 17px; line-height: 1.6; color: #3C3C3C; margin-bottom: 22px; }
+  .opcao:hover .botao { background: #1E1E1E; color: #fff; }
   .clara { background: #F4F4F3; }
 
   .infos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding-top: 56px; padding-bottom: 80px; }
@@ -97,7 +103,7 @@
     .topo { padding-right: 22px; }
     .quina { width: 40px; height: 40px; }
     .topo .marca { padding-top: 20px; font-size: 12px; }
-    .dupla, .obras, .sobre { grid-template-columns: 1fr; gap: 36px; }
+    .dupla, .obras, .sobre, .opcoes { grid-template-columns: 1fr; gap: 36px; }
     .obras { gap: 56px; }
     .infos { grid-template-columns: 1fr 1fr; gap: 30px 22px; }
     .sobre img { max-width: 220px; }
@@ -127,14 +133,25 @@ fbq('track', 'PageView');
 </header>
 
 <!-- ABERTURA -->
-<section class="faixa abertura dupla">
-  <div>
-    <h1 class="titulo"><span class="grande">Arte</span><span class="sub">para presentear</span></h1>
-    <p style="font-size:19px;">Fotografias analógicas do Rio de Janeiro em caixas de acrílico.</p>
-    <p class="frase" style="margin-bottom:34px;">Encomendas de Natal até 10/12 para envio a todo o Brasil e até 16/12 para entrega no Rio.</p>
-    <a class="botao" href="#obras">Ver as obras</a>
+<section class="faixa abertura">
+  <h1 class="titulo"><span class="grande">Arte</span><span class="sub">para presentear</span></h1>
+  <p style="font-size:19px; max-width:560px;">Fotografias analógicas do Rio de Janeiro em caixas de acrílico.</p>
+  <p class="frase" style="max-width:560px; margin-bottom:48px;">Encomendas de Natal até 10/12 para envio a todo o Brasil e até 16/12 para entrega no Rio.</p>
+
+  <div class="opcoes">
+    <a class="opcao" href="#obras">
+      <img src="pages/janelas-nikonos-34.jpg" alt="Caixa de acrílico com a fotografia Roda Mundo, vista de lado">
+      <span class="opcao-nome">Janelas para o Rio</span>
+      <span class="opcao-texto">Dez fotografias do Rio em caixas de 18 × 18 cm. R$ 900 cada.</span>
+      <span class="botao">Ver as Janelas</span>
+    </a>
+    <a class="opcao" href="https://loja.danijustus.art/pages/cartasaomar">
+      <img src="pages/cartasaomar-trio-aparador.jpg" alt="As três obras da série Cartas ao Mar em acrílico amarelo, violeta e rosa sobre um aparador">
+      <span class="opcao-nome">Cartas ao Mar</span>
+      <span class="opcao-texto">Morri de Amor, Morri de Saudade, Não Morri de Vontade. R$ 590 cada.</span>
+      <span class="botao">Ver Cartas ao Mar</span>
+    </a>
   </div>
-  <img src="pages/janelas-nikonos-34.jpg" alt="Caixa de acrílico com a fotografia Roda Mundo, vista de lado">
 </section>
 
 <!-- JANELAS PARA O RIO -->
@@ -251,14 +268,14 @@ fbq('track', 'PageView');
     </div>
 
     <div class="obra">
-      <button type="button" class="troca" aria-label="Ver a outra vista da caixa"><img loading="lazy" src="pages/janelas-vista.jpg" data-frente="pages/janelas-vista.jpg" data-lado="pages/janelas-vista-34.jpg" alt="Depois da Chuva, fotografia analógica em preto e branco do morro Dois Irmãos visto da Vista Chinesa, em caixa de acrílico"></button>
+      <button type="button" class="troca" aria-label="Ver a outra vista da caixa"><img loading="lazy" src="pages/janelas-vista.jpg" data-frente="pages/janelas-vista.jpg" data-lado="pages/janelas-vista-34.jpg" alt="O Dois Irmãos lá da Vista Chinesa, fotografia analógica em preto e branco, em caixa de acrílico"></button>
       <div class="legenda">
-        <p class="nome">Depois da Chuva</p>
+        <p class="nome">O Dois Irmãos lá da Vista Chinesa</p>
         <p class="onde">Janeiro/2026<br>Vista Chinesa, Rio de Janeiro</p>
       </div>
       <div class="venda">
         <p>R$ 900<br><span class="frete">+ R$ 50 de frete fixo para todo o Brasil</span></p>
-        <button type="button" class="botao" data-comprar="Depois da Chuva">Comprar</button>
+        <button type="button" class="botao" data-comprar="O Dois Irmãos lá da Vista Chinesa">Comprar</button>
       </div>
     </div>
 
@@ -305,19 +322,6 @@ fbq('track', 'PageView');
       <p>As fotografias da série também podem ser impressas em formatos maiores. Entre em contato para informações.</p>
     </div>
     <a class="botao" data-contato="1" href="https://wa.me/5521998733496?text=Ol%C3%A1%21%20Quero%20informa%C3%A7%C3%B5es%20sobre%20formatos%20maiores%20das%20fotografias." target="_blank" rel="noopener">Falar pelo WhatsApp</a>
-  </div>
-</section>
-
-<!-- CARTAS AO MAR -->
-<section id="cartas" class="clara">
-  <div class="faixa secao dupla">
-    <img loading="lazy" src="pages/cartasaomar-trio-aparador.jpg" alt="As três obras em acrílico amarelo, violeta e rosa sobre um aparador de madeira, com o Pão de Açúcar na janela" style="width:100%;">
-    <div>
-      <h2 class="titulo"><span class="grande">Cartas</span><span class="sub">ao mar</span></h2>
-      <p class="frase">Morri de Amor, Morri de Saudade, Não Morri de Vontade.</p>
-      <p style="margin-bottom:32px;">Três fotografias analógicas montadas em acrílico colorido, em parceria com a Casa Proeza. R$ 590 cada.</p>
-      <a class="botao" href="https://loja.danijustus.art/pages/cartasaomar">Ver as três obras</a>
-    </div>
   </div>
 </section>
 

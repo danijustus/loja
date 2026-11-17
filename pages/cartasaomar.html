@@ -191,14 +191,15 @@ fbq('track', 'ViewContent', {content_name: 'Cartas ao Mar', content_category: 'F
     <p class="resumo" id="pedido-resumo"></p>
     <label>Nome completo<input name="nome" autocomplete="name" required></label>
     <div class="linha">
+      <label>CPF<input name="cpf" inputmode="numeric" placeholder="000.000.000-00" required></label>
       <label>WhatsApp<input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(21) 99999-9999" required></label>
-      <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
     </div>
+    <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
+    <label style="max-width:200px;">CEP<input name="cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" required></label>
     <div class="linha">
-      <label>CEP<input name="cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" required></label>
+      <label>Endereço<input name="endereco" autocomplete="address-line1" required></label>
       <label class="estreito">Número<input name="numero" required></label>
     </div>
-    <label>Endereço<input name="endereco" autocomplete="address-line1" required></label>
     <label>Complemento<input name="complemento" autocomplete="address-line2"></label>
     <label>Bairro<input name="bairro" required></label>
     <div class="linha">
@@ -263,6 +264,7 @@ fbq('track', 'ViewContent', {content_name: 'Cartas ao Mar', content_category: 'F
     e.preventDefault();
     var falta = Array.prototype.find.call(form.elements, function (el) { return el.required && !el.value.trim(); });
     if (falta) { erro.textContent = 'Preencha todos os campos obrigatórios.'; falta.focus(); return; }
+    if (form.elements.cpf.value.replace(/\D/g, '').length !== 11) { erro.textContent = 'Confira o CPF.'; form.elements.cpf.focus(); return; }
     if (!/\S+@\S+\.\S+/.test(form.elements.email.value)) { erro.textContent = 'Confira o e-mail.'; form.elements.email.focus(); return; }
     var o = OBRAS[atual];
     var dados = new URLSearchParams(new FormData(form));
