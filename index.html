@@ -47,6 +47,7 @@
   .cabeca-obras span { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: clamp(18px, 2.4vw, 24px); letter-spacing: .36em; text-transform: uppercase; }
   .cabeca-obras::after { content: ""; width: 90px; height: 1px; background: #1E1E1E; }
 
+  .dica { margin: -18px 0 44px; text-align: right; font-size: 15px; }
   .obras { display: grid; grid-template-columns: 1fr 1fr; gap: 72px 56px; }
   .troca { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; }
   .troca img, .obra > img { width: 100%; }
@@ -108,7 +109,10 @@
     .infos { grid-template-columns: 1fr 1fr; gap: 30px 22px; }
     .sobre img { max-width: 220px; }
     .titulo .sub { letter-spacing: .36em; }
-    .cabeca-obras span { letter-spacing: .24em; }
+    .cabeca-obras { justify-content: flex-start; gap: 14px; padding-bottom: 14px; }
+    .cabeca-obras span { letter-spacing: .18em; font-size: 19px; white-space: nowrap; }
+    .cabeca-obras::after { flex: 1 1 auto; width: auto; min-width: 20px; }
+    .dica { margin: 0 0 32px; text-align: left; }
     .rodape { padding-left: 22px; }
   }
 </style>
@@ -179,7 +183,7 @@ fbq('track', 'PageView');
 <!-- OBRAS -->
 <section id="obras" class="faixa secao">
   <div class="cabeca-obras"><span>Obras disponíveis</span></div>
-  <p style="margin:-18px 0 44px; text-align:right; font-size:15px;">Toque na foto para ver a caixa de lado.</p>
+  <p class="dica">Toque na foto para ver a caixa de lado.</p>
 
   <div class="obras">
 
