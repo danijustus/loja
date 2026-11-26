@@ -63,8 +63,9 @@
 
   .maiores { display: flex; justify-content: space-between; align-items: center; gap: 28px; flex-wrap: wrap; margin-top: 80px; }
   .maiores > div { flex: 1 1 320px; }
-  .zap { position: fixed; right: 20px; bottom: 20px; z-index: 10; background: #1E1E1E; color: #fff; text-decoration: none; padding: 13px 24px; border-radius: 999px; font-family: 'Raleway', sans-serif; font-size: 15px; letter-spacing: .06em; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
-  .zap:hover { background: #3C3C3C; color: #fff; }
+  .zap { position: fixed; right: 20px; bottom: 20px; z-index: 10; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(0,0,0,.22); transition: transform .2s; }
+  .zap:hover { transform: scale(1.06); background: #25D366; }
+  .zap svg { width: 32px; height: 32px; fill: #fff; }
   .frete { font-size: 14px; color: #3C3C3C; }
   button.botao { cursor: pointer; }
   #pedido { border: 0; padding: 0; width: min(520px, calc(100vw - 32px)); max-height: calc(100vh - 32px); background: #ECECEC; color: #1E1E1E; font-family: 'Open Sans', sans-serif; overflow-y: auto; }
@@ -91,7 +92,7 @@
   .opcao:hover .botao { background: #1E1E1E; color: #fff; }
   .clara { background: #F4F4F3; }
 
-  .infos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding-top: 56px; padding-bottom: 80px; }
+  .infos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-top: 56px; padding-bottom: 80px; }
   .infos h3 { font-family: 'Open Sans', sans-serif; font-weight: 700; font-size: 17px; margin: 0 0 8px; }
   .infos p { font-size: 16px; margin: 0; }
 
@@ -106,7 +107,7 @@
     .topo .marca { padding-top: 20px; font-size: 12px; }
     .dupla, .obras, .sobre, .opcoes { grid-template-columns: 1fr; gap: 36px; }
     .obras { gap: 56px; }
-    .infos { grid-template-columns: 1fr 1fr; gap: 30px 22px; }
+    .infos { grid-template-columns: 1fr; gap: 26px; }
     .sobre img { max-width: 220px; }
     .titulo .sub { letter-spacing: .36em; }
     .cabeca-obras { justify-content: flex-start; gap: 14px; padding-bottom: 14px; }
@@ -139,8 +140,7 @@ fbq('track', 'PageView');
 <!-- ABERTURA -->
 <section class="faixa abertura">
   <h1 class="titulo"><span class="grande">Arte</span><span class="sub">para presentear</span></h1>
-  <p style="font-size:19px; max-width:560px;">Fotografias analógicas do Rio de Janeiro em caixas de acrílico.</p>
-  <p class="frase" style="max-width:560px; margin-bottom:48px;">Encomendas de Natal até 10/12 para envio a todo o Brasil e até 16/12 para entrega no Rio.</p>
+  <p style="font-size:19px; max-width:560px; margin-bottom:48px;">Fotografias analógicas do Rio de Janeiro em caixas de acrílico.</p>
 
   <div class="opcoes">
     <a class="opcao" href="#obras">
@@ -342,10 +342,6 @@ fbq('track', 'PageView');
 <div class="faixa"><div style="height:1px; background:#1E1E1E; width:150px;"></div></div>
 <section class="faixa infos">
   <div>
-    <h3>Prazos de Natal</h3>
-    <p>Encomendas até 10/12 para envio e até 16/12 para entrega no Rio.</p>
-  </div>
-  <div>
     <h3>Autenticidade</h3>
     <p>Edição numerada, com certificado assinado pela artista.</p>
   </div>
@@ -376,7 +372,7 @@ fbq('track', 'PageView');
   <div class="quina"></div>
 </footer>
 
-<a class="zap" data-contato="1" href="https://wa.me/5521998733496?text=Ol%C3%A1%21%20Vi%20as%20caixas%20de%20acr%C3%ADlico%20e%20quero%20saber%20mais." target="_blank" rel="noopener">WhatsApp</a>
+<a class="zap" data-contato="1" href="https://wa.me/5521998733496?text=Ol%C3%A1%21%20Vi%20as%20caixas%20de%20acr%C3%ADlico%20e%20quero%20saber%20mais." target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4a10.5 10.5 0 0 1-1.6-5.6C5.2 9.9 10 5.2 16 5.2s10.8 4.7 10.8 10.6S22 26.4 16 26.4zm5.9-7.9c-.3-.2-1.9-1-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.6 4.9 2.7 1.1 3.3.9 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.7-.5z"/></svg></a>
 
 <dialog id="pedido" aria-labelledby="pedido-titulo">
   <button type="button" class="fechar" aria-label="Fechar">&times;</button>
