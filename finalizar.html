@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finalizar compra | Dani Justus</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/js/loja.css">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #F4EDE8; color: #2A1F26; font-family: 'Jost', sans-serif; font-size: 17px; line-height: 1.55; }
+  h1 { font-family: 'Playfair Display', serif; font-weight: 600; color: #42283A; font-size: clamp(30px, 4.6vw, 40px); margin: 0 0 28px; }
+  .fim { max-width: 1060px; margin: 0 auto; padding: 44px 24px 80px; display: grid; grid-template-columns: 1fr 380px; gap: 40px; align-items: start; }
+  .caixa { background: #FAF6F3; border: 1px solid #EADDE1; border-radius: 2px; padding: 26px 26px 22px; margin-bottom: 20px; }
+  .caixa h2 { display: flex; align-items: center; gap: 12px; font-family: 'Playfair Display', serif; font-weight: 600; font-size: 22px; color: #42283A; margin: 0 0 18px; }
+  .caixa h2 span { display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: #42283A; color: #fff; font-family: 'Jost', sans-serif; font-size: 15px; font-weight: 500; align-items: center; justify-content: center; }
+  label { display: block; font-size: 15px; color: #3A2F35; margin-bottom: 12px; }
+  input[type=text], input[type=email], input[type=tel], input:not([type]) { display: block; width: 100%; margin-top: 4px; padding: 12px 13px; border: 1px solid #D9C6CD; border-radius: 2px; background: #fff; font-family: inherit; font-size: 16px; color: #2A1F26; }
+  input:focus { outline: 2px solid #42283A; outline-offset: 0; border-color: #42283A; }
+  .linha { display: flex; gap: 12px; }
+  .linha label { flex: 1; min-width: 0; }
+  .estreito { flex: 0 0 96px !important; }
+  .marcar { display: flex; gap: 10px; align-items: flex-start; font-size: 16px; margin: 4px 0 14px; cursor: pointer; }
+  .marcar input { margin-top: 5px; accent-color: #42283A; }
+  .opcoes-pag { display: grid; gap: 10px; }
+  .pag { display: flex; gap: 12px; align-items: flex-start; border: 1px solid #D9C6CD; border-radius: 2px; padding: 14px 16px; background: #fff; cursor: pointer; margin: 0; }
+  .pag input { margin-top: 5px; accent-color: #42283A; }
+  .pag strong { display: block; font-weight: 500; color: #2A1F26; }
+  .pag small { color: #5A4A52; font-size: 14px; }
+  .pag:has(input:checked) { border-color: #42283A; outline: 1px solid #42283A; }
+  .erro { color: #A3123A; font-size: 15px; min-height: 1em; margin: 10px 0; }
+  .lado { position: sticky; top: 90px; }
+  .lado .caixa h2 { font-size: 21px; }
+  .aviso { font-size: 14px; color: #5A4A52; margin: 12px 0 0; }
+  #pronto { display: none; max-width: 640px; margin: 0 auto; padding: 44px 24px 80px; }
+  #pronto .qr { background: #fff; padding: 14px; display: inline-block; border-radius: 2px; margin: 4px 0 16px; }
+  #pronto .qr img { display: block; width: 240px; height: 240px; image-rendering: pixelated; }
+  .copia { display: flex; gap: 8px; margin: 0 0 18px; }
+  .copia input { margin: 0; font-size: 13px; color: #5A4A52; }
+  .copia button { flex: none; width: auto; margin: 0; padding: 0 18px; }
+  .vazio-pg { max-width: 640px; margin: 0 auto; padding: 60px 24px 100px; }
+  @media (max-width: 860px) {
+    .fim { grid-template-columns: 1fr; gap: 0; padding-top: 30px; }
+    .lado { position: static; order: -1; }
+    .caixa { padding: 22px 18px 18px; }
+  }
+</style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1060315336275430');
+fbq('track', 'PageView');
+</script>
+<!-- Fim Meta Pixel -->
+</head>
+<body>
+
+<header class="menu">
+  <div class="menu-faixa">
+    <a class="menu-marca" href="/">Dani Justus</a>
+    <nav aria-label="Menu principal">
+      <a href="/#janelas">Janelas para o Rio</a>
+      <a href="/pages/cartasaomar">Cartas ao Mar</a>
+      <a href="/#estudio">Estúdio</a>
+    </nav>
+    <button type="button" class="menu-sacola" data-abrir-carrinho aria-label="Abrir carrinho"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span data-qtd style="display:none">0</span></button>
+  </div>
+</header>
+
+<div class="vazio-pg" id="vazio" style="display:none">
+  <h1>Seu carrinho está vazio</h1>
+  <p>Escolha uma obra para continuar.</p>
+  <p style="margin-top:26px;"><a class="botao-loja" style="display:inline-block;width:auto;padding:15px 26px;" href="/#janelas">Ver as Janelas para o Rio</a></p>
+  <p><a class="botao-loja claro" style="display:inline-block;width:auto;padding:15px 26px;" href="/pages/cartasaomar">Ver Cartas ao Mar</a></p>
+</div>
+
+<form class="fim" id="fim" novalidate style="display:none">
+  <div>
+    <h1>Finalizar compra</h1>
+
+    <div class="caixa">
+      <h2><span>1</span>Seus dados</h2>
+      <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
+      <label>Nome completo<input name="nome" autocomplete="name" required></label>
+      <div class="linha">
+        <label>WhatsApp<input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(21) 99999-9999" required></label>
+        <label>CPF<input name="cpf" inputmode="numeric" placeholder="000.000.000-00" required></label>
+      </div>
+    </div>
+
+    <div class="caixa">
+      <h2><span>2</span>Entrega</h2>
+      <label class="marcar"><input type="checkbox" name="retirada" value="sim"> Vou retirar no estúdio, no Jardim Botânico (sem frete)</label>
+      <div id="endereco">
+        <label style="max-width:200px;">CEP<input name="cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" required></label>
+        <div class="linha">
+          <label>Endereço<input name="endereco" autocomplete="address-line1" required></label>
+          <label class="estreito">Número<input name="numero" required></label>
+        </div>
+        <label>Complemento<input name="complemento" autocomplete="address-line2"></label>
+        <label>Bairro<input name="bairro" required></label>
+        <div class="linha">
+          <label>Cidade<input name="cidade" autocomplete="address-level2" required></label>
+          <label class="estreito">UF<input name="uf" maxlength="2" autocomplete="address-level1" required></label>
+        </div>
+        <p class="aviso" style="margin-top:0;">Seus dados são usados só para o envio da obra. Produção em até 7 dias + prazo de entrega dos Correios.</p>
+      </div>
+    </div>
+
+    <div class="caixa">
+      <h2><span>3</span>Pagamento</h2>
+      <div class="opcoes-pag">
+        <label class="pag"><input type="radio" name="pagamento" value="Pix" checked><span><strong>Pix</strong><small>O QR code aparece na próxima tela, aqui mesmo no site.</small></span></label>
+        <label class="pag"><input type="radio" name="pagamento" value="Cartão"><span><strong>Cartão de crédito, em até 3x sem juros</strong><small id="cartao-info">Pelo Mercado Pago.</small></span></label>
+      </div>
+      <p class="erro" id="erro" role="alert"></p>
+      <button type="submit" class="botao-loja" id="enviar">Finalizar pedido</button>
+    </div>
+  </div>
+
+  <aside class="lado">
+    <div class="caixa">
+      <h2>Resumo do pedido</h2>
+      <div id="resumo-itens"></div>
+      <div id="resumo-contas" style="margin-top:14px;"></div>
+      <p class="aviso">Cada obra vai assinada e com certificado de autenticidade.</p>
+    </div>
+  </aside>
+</form>
+
+<section id="pronto" aria-live="polite"></section>
+
+<script src="/js/qrcode.js"></script>
+<script src="/js/loja.js"></script>
+<script>
+(function () {
+  var PLANILHA = 'https://script.google.com/macros/s/AKfycbwVMkxAPdDLWIR8yIAjF7bXVyx177gVL4NK6sFcbljflLOGwxq_wfMjYPsoJZ18zcMwXw/exec';
+  var PIX_CHAVE = '15277369000113', PIX_NOME = 'DANI JUSTUS', PIX_CIDADE = 'RIO DE JANEIRO';
+  var L = window.Loja, form = document.getElementById('fim'), erro = document.getElementById('erro');
+  var retirada = form.elements.retirada;
+
+  function contas() {
+    var c = L.ler(), t = L.totais(c);
+    if (retirada.checked) { t.frete = 0; t.total = t.sub; }
+    return { c: c, t: t };
+  }
+  window.desenharResumo = function () {
+    var x = contas();
+    if (!x.c.length) { form.style.display = 'none'; document.getElementById('vazio').style.display = ''; return; }
+    form.style.display = ''; document.getElementById('vazio').style.display = 'none';
+    document.getElementById('resumo-itens').innerHTML = x.c.map(function (i) { return L.linhaItem(i, true); }).join('');
+    document.getElementById('resumo-contas').innerHTML =
+      '<div class="conta"><span>Subtotal</span><span>' + L.brl(x.t.sub) + '</span></div>' +
+      '<div class="conta"><span>' + (retirada.checked ? 'Retirada no estúdio' : 'Frete fixo para todo o Brasil') + '</span><span>' + (retirada.checked ? 'grátis' : L.brl(x.t.frete)) + '</span></div>' +
+      '<div class="conta total" style="margin-bottom:0"><span>Total</span><span>' + L.brl(x.t.total) + '</span></div>';
+  };
+  document.getElementById('resumo-itens').addEventListener('click', function (e) {
+    var m = e.target.closest('[data-mudar]');
+    if (m) L.mudar(m.getAttribute('data-id'), +m.getAttribute('data-mudar'));
+  });
+  retirada.addEventListener('change', function () {
+    document.getElementById('endereco').style.display = retirada.checked ? 'none' : '';
+    desenharResumo();
+  });
+  desenharResumo();
+
+  var cep = form.elements.cep;
+  cep.addEventListener('blur', function () {
+    var n = cep.value.replace(/\D/g, '');
+    if (n.length !== 8) return;
+    fetch('https://viacep.com.br/ws/' + n + '/json/').then(function (r) { return r.json(); }).then(function (d) {
+      if (d.erro) return;
+      if (!form.elements.endereco.value) form.elements.endereco.value = d.logradouro || '';
+      if (!form.elements.bairro.value) form.elements.bairro.value = d.bairro || '';
+      form.elements.cidade.value = d.localidade || form.elements.cidade.value;
+      form.elements.uf.value = d.uf || form.elements.uf.value;
+      form.elements.numero.focus();
+    }).catch(function () {});
+  });
+
+  /* Pix copia e cola (BR Code) */
+  function campo(id, v) { return id + (v.length < 10 ? '0' : '') + v.length + v; }
+  function crc16(s) {
+    var crc = 0xFFFF;
+    for (var i = 0; i < s.length; i++) {
+      crc ^= s.charCodeAt(i) << 8;
+      for (var j = 0; j < 8; j++) crc = (crc & 0x8000) ? ((crc << 1) ^ 0x1021) & 0xFFFF : (crc << 1) & 0xFFFF;
+    }
+    return ('000' + crc.toString(16).toUpperCase()).slice(-4);
+  }
+  function pix(valor, txid) {
+    var p = campo('00', '01') + campo('26', campo('00', 'br.gov.bcb.pix') + campo('01', PIX_CHAVE)) +
+      campo('52', '0000') + campo('53', '986') + campo('54', valor.toFixed(2)) + campo('58', 'BR') +
+      campo('59', PIX_NOME) + campo('60', PIX_CIDADE) + campo('62', campo('05', txid)) + '6304';
+    return p + crc16(p);
+  }
+  window.__pix = pix;
+
+  function codigoPedido() {
+    var d = new Date(), z = function (n) { return (n < 10 ? '0' : '') + n; };
+    return 'DJ' + String(d.getFullYear()).slice(2) + z(d.getMonth() + 1) + z(d.getDate()) + Math.random().toString(36).slice(2, 6).toUpperCase();
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var x = contas();
+    if (!x.c.length) return;
+    var falta = Array.prototype.find.call(form.elements, function (el) {
+      return el.required && !el.value.trim() && !(retirada.checked && el.closest('#endereco'));
+    });
+    if (falta) { erro.textContent = 'Preencha todos os campos obrigatórios.'; falta.focus(); return; }
+    if (!/\S+@\S+\.\S+/.test(form.elements.email.value)) { erro.textContent = 'Confira o e-mail.'; form.elements.email.focus(); return; }
+    if (form.elements.cpf.value.replace(/\D/g, '').length !== 11) { erro.textContent = 'Confira o CPF.'; form.elements.cpf.focus(); return; }
+    erro.textContent = '';
+
+    var pedido = codigoPedido();
+    var pagamento = form.elements.pagamento.value;
+    var lista = x.c.map(function (i) { return i.qtd + 'x ' + i.nome + (i.id.indexOf('janela:') === 0 ? ' (Janelas para o Rio)' : ''); }).join('; ');
+    var dados = new URLSearchParams(new FormData(form));
+    dados.set('retirada', retirada.checked ? 'sim' : 'não');
+    dados.append('obra', lista + ' | ' + pagamento + (retirada.checked ? ' | retirada no estúdio' : '') + ' | pedido ' + pedido);
+    dados.append('valor', x.t.total);
+    dados.append('pedido', pedido);
+
+    var btn = document.getElementById('enviar');
+    btn.disabled = true; btn.textContent = 'Enviando...';
+    if (window.fbq) {
+      fbq('track', 'Lead', { content_name: lista, content_category: 'Fine Art', currency: 'BRL', value: x.t.total });
+      fbq('track', 'InitiateCheckout', { content_category: 'Fine Art', currency: 'BRL', value: x.t.total, num_items: x.t.itens });
+      fbq('track', 'AddPaymentInfo', { content_category: 'Fine Art', currency: 'BRL', value: x.t.total, payment_type: pagamento });
+    }
+
+    var feito = false;
+    function seguir() {
+      if (feito) return; feito = true;
+      var umSo = x.c.length === 1 && x.c[0].qtd === 1 && x.c[0].link && !retirada.checked;
+      if (pagamento === 'Cartão' && umSo) { window.location.href = x.c[0].link; return; }
+      mostrarPronto(pedido, pagamento, x, lista);
+    }
+    fetch(PLANILHA, { method: 'POST', mode: 'no-cors', body: dados }).then(seguir, seguir);
+    setTimeout(seguir, 2500);
+  });
+
+  function mostrarPronto(pedido, pagamento, x, lista) {
+    var nome = form.elements.nome.value.trim().split(' ')[0];
+    var total = L.brl(x.t.total);
+    var el = document.getElementById('pronto');
+    var html = '<h1>Pedido recebido, ' + nome + '!</h1><p>Número do pedido: <strong>' + pedido + '</strong></p>';
+    var msg;
+    if (pagamento === 'Pix') {
+      var codigo = pix(x.t.total, pedido);
+      var qr = qrcode(0, 'M'); qr.addData(codigo); qr.make();
+      msg = 'Olá! Fiz o pedido ' + pedido + ' no site (' + lista + ', total ' + total + ') e paguei com Pix. Segue o comprovante.';
+      html += '<div class="caixa"><h2>Pague com Pix: ' + total + '</h2>' +
+        '<p style="margin-top:0">Abra o app do seu banco, escolha Pix e leia o QR code, ou use o copia e cola.</p>' +
+        '<div class="qr">' + qr.createImgTag(6, 8) + '</div>' +
+        '<div class="copia"><input readonly value="' + codigo + '" id="codigo" aria-label="Código Pix copia e cola"><button type="button" class="botao-loja" id="copiar">Copiar</button></div>' +
+        '<p class="aviso" style="margin-top:0">O Pix vai para Dani Justus, CNPJ 15.277.369/0001-13. Assim que o pagamento cair, eu confirmo por e-mail.</p>' +
+        '<a class="botao-loja claro" style="margin-top:14px" target="_blank" rel="noopener" data-contato="1" href="https://wa.me/' + L.WHATS + '?text=' + encodeURIComponent(msg) + '">Enviar comprovante pelo WhatsApp</a></div>';
+    } else {
+      msg = 'Olá! Fiz o pedido ' + pedido + ' no site (' + lista + ', total ' + total + ') e quero pagar no cartão.';
+      html += '<div class="caixa"><h2>Pagamento no cartão</h2><p style="margin-top:0">Vou te mandar o link de pagamento do cartão, em até 3x sem juros, pelo WhatsApp. Se preferir agilizar, é só me chamar:</p>' +
+        '<a class="botao-loja" target="_blank" rel="noopener" data-contato="1" href="https://wa.me/' + L.WHATS + '?text=' + encodeURIComponent(msg) + '">Chamar no WhatsApp</a></div>';
+    }
+    html += '<div class="caixa"><h2>Resumo</h2>' + x.c.map(function (i) { return L.linhaItem(i, false); }).join('') +
+      '<div class="conta" style="margin-top:12px"><span>Frete</span><span>' + (retirada.checked ? 'retirada no estúdio' : L.brl(x.t.frete)) + '</span></div>' +
+      '<div class="conta total" style="margin-bottom:0"><span>Total</span><span>' + total + '</span></div></div>';
+    el.innerHTML = html;
+    form.style.display = 'none'; el.style.display = 'block'; window.scrollTo(0, 0);
+    var cp = document.getElementById('copiar');
+    if (cp) cp.addEventListener('click', function () {
+      var i = document.getElementById('codigo'); i.select();
+      try { navigator.clipboard.writeText(i.value); } catch (e) { document.execCommand('copy'); }
+      cp.textContent = 'Copiado';
+    });
+    L.gravar([]);
+  }
+})();
+</script>
+</body>
+</html>
