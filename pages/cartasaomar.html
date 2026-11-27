@@ -37,8 +37,20 @@ fbq('track', 'ViewContent', {content_name: 'Cartas ao Mar', content_category: 'F
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1060315336275430&ev=PageView&noscript=1"/></noscript>
 <!-- Fim Meta Pixel -->
+<link rel="stylesheet" href="/js/loja.css">
 </head>
 <body>
+<header class="menu">
+  <div class="menu-faixa">
+    <a class="menu-marca" href="/">Dani Justus</a>
+    <nav aria-label="Menu principal">
+      <a href="/#janelas">Janelas para o Rio</a>
+      <a href="/pages/cartasaomar">Cartas ao Mar</a>
+      <a href="/#estudio">Estúdio</a>
+    </nav>
+    <button type="button" class="menu-sacola" data-abrir-carrinho aria-label="Abrir carrinho"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span data-qtd style="display:none">0</span></button>
+  </div>
+</header>
 <div style="font-family:'Jost',sans-serif; background:#F4EDE8; color:#2A1F26; max-width:100%; overflow-x:hidden;">
 
   <div style="max-width:760px; margin:0 auto; padding:56px 20px 0; text-align:center;">
@@ -167,121 +179,7 @@ fbq('track', 'ViewContent', {content_name: 'Cartas ao Mar', content_category: 'F
 
 </div>
 <a class="zap" data-contato="1" href="https://wa.me/5521998733496?text=Ol%C3%A1%21%20Vi%20a%20s%C3%A9rie%20Cartas%20ao%20Mar%20e%20quero%20saber%20mais%20sobre%20as%20obras." target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4a10.5 10.5 0 0 1-1.6-5.6C5.2 9.9 10 5.2 16 5.2s10.8 4.7 10.8 10.6S22 26.4 16 26.4zm5.9-7.9c-.3-.2-1.9-1-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.6 4.9 2.7 1.1 3.3.9 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.7-.5z"/></svg></a>
-<style>
-  #pedido { border:0; padding:0; width:min(520px, calc(100vw - 32px)); max-height:calc(100vh - 32px); background:#F4EDE8; color:#2A1F26; border-radius:4px; font-family:'Jost',sans-serif; overflow-y:auto; }
-  #pedido::backdrop { background:rgba(42,31,38,.55); }
-  #pedido form { padding:28px 22px 24px; }
-  #pedido h2 { font-family:'Playfair Display',serif; font-weight:600; font-size:26px; color:#42283A; margin:0 0 4px; }
-  #pedido .resumo { font-size:17px; color:#3A2F35; margin:0 0 20px; }
-  #pedido label { display:block; font-size:16px; color:#3A2F35; margin:0 0 14px; }
-  #pedido input, #pedido select { display:block; width:100%; box-sizing:border-box; margin-top:5px; padding:12px; font-size:17px; font-family:inherit; color:#2A1F26; background:#fff; border:1px solid #B9A9B1; border-radius:2px; }
-  #pedido input:focus { outline:2px solid #42283A; outline-offset:0; border-color:#42283A; }
-  #pedido .linha { display:flex; gap:12px; }
-  #pedido .linha label { flex:1; min-width:0; }
-  #pedido .estreito { flex:0 0 90px !important; }
-  #pedido .aviso { font-size:15px; color:#5A4A52; margin:4px 0 18px; }
-  #pedido .erro { font-size:15px; color:#A3123A; margin:0 0 12px; min-height:1em; }
-  #pedido .enviar { width:100%; background:#42283A; color:#fff; border:0; padding:17px; font-size:17px; font-weight:500; font-family:inherit; border-radius:2px; cursor:pointer; }
-  #pedido .enviar:disabled { opacity:.6; cursor:wait; }
-  #pedido .fechar { position:absolute; top:10px; right:10px; background:none; border:0; font-size:28px; line-height:1; color:#42283A; cursor:pointer; padding:6px 10px; }
-</style>
-
-<dialog id="pedido" aria-labelledby="pedido-titulo">
-  <button type="button" class="fechar" aria-label="Fechar">&times;</button>
-  <form id="pedido-form" novalidate>
-    <h2 id="pedido-titulo">Seu pedido</h2>
-    <p class="resumo" id="pedido-resumo"></p>
-    <label>Nome completo<input name="nome" autocomplete="name" required></label>
-    <div class="linha">
-      <label>CPF<input name="cpf" inputmode="numeric" placeholder="000.000.000-00" required></label>
-      <label>WhatsApp<input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(21) 99999-9999" required></label>
-    </div>
-    <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
-    <label style="max-width:200px;">CEP<input name="cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" required></label>
-    <div class="linha">
-      <label>Endereço<input name="endereco" autocomplete="address-line1" required></label>
-      <label class="estreito">Número<input name="numero" required></label>
-    </div>
-    <label>Complemento<input name="complemento" autocomplete="address-line2"></label>
-    <label>Bairro<input name="bairro" required></label>
-    <div class="linha">
-      <label>Cidade<input name="cidade" autocomplete="address-level2" required></label>
-      <label class="estreito">UF<input name="uf" maxlength="2" autocomplete="address-level1" required></label>
-    </div>
-    <p class="aviso">Na próxima tela você paga com Pix ou cartão pelo Mercado Pago.</p>
-    <p class="erro" id="pedido-erro" role="alert"></p>
-    <button type="submit" class="enviar">Ir para o pagamento</button>
-  </form>
-</dialog>
-
-<script>
-(function () {
-  // Preencher depois: URL do Apps Script da planilha e links do Mercado Pago
-  var PLANILHA = 'https://script.google.com/macros/s/AKfycbwVMkxAPdDLWIR8yIAjF7bXVyx177gVL4NK6sFcbljflLOGwxq_wfMjYPsoJZ18zcMwXw/exec';
-  var OBRAS = {
-    amor:     { nome: 'Morri de Amor',        valor: 590,  link: 'https://mpago.li/1ePY7sH' },
-    saudade:  { nome: 'Morri de Saudade',     valor: 590,  link: 'https://mpago.li/2yBR3yn' },
-    vontade:  { nome: 'Não Morri de Vontade', valor: 590,  link: 'https://mpago.li/149D7LP' },
-    triptico: { nome: 'Tríptico',             valor: 1490, frete: 120, link: 'https://mpago.li/1TTqeTE' }
-  };
-  var FRETE = 50;
-  function frete(o) { return o.frete || FRETE; }
-  var dlg = document.getElementById('pedido');
-  var form = document.getElementById('pedido-form');
-  var erro = document.getElementById('pedido-erro');
-  var atual = null;
-  function brl(n) { return 'R$ ' + n.toLocaleString('pt-BR', { minimumFractionDigits: 2 }); }
-
-  document.addEventListener('click', function (e) {
-    var b = e.target.closest('[data-comprar]');
-    if (b) {
-      atual = b.getAttribute('data-comprar');
-      var o = OBRAS[atual];
-      document.getElementById('pedido-resumo').textContent =
-        o.nome + ': ' + brl(o.valor) + ' + ' + brl(frete(o)) + ' de frete = ' + brl(o.valor + frete(o));
-      erro.textContent = '';
-      dlg.showModal();
-      if (window.fbq) fbq('track', 'AddToCart', { content_name: o.nome, content_category: 'Fine Art', currency: 'BRL', value: o.valor });
-      return;
-    }
-    if (e.target.closest('[data-contato]') && window.fbq) fbq('track', 'Contact', { content_name: 'Cartas ao Mar' });
-  });
-  dlg.querySelector('.fechar').addEventListener('click', function () { dlg.close(); });
-
-  var cep = form.elements.cep;
-  cep.addEventListener('blur', function () {
-    var c = cep.value.replace(/\D/g, '');
-    if (c.length !== 8) return;
-    fetch('https://viacep.com.br/ws/' + c + '/json/').then(function (r) { return r.json(); }).then(function (d) {
-      if (d.erro) return;
-      if (!form.elements.endereco.value) form.elements.endereco.value = d.logradouro || '';
-      if (!form.elements.bairro.value) form.elements.bairro.value = d.bairro || '';
-      form.elements.cidade.value = d.localidade || form.elements.cidade.value;
-      form.elements.uf.value = d.uf || form.elements.uf.value;
-      form.elements.numero.focus();
-    }).catch(function () {});
-  });
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var falta = Array.prototype.find.call(form.elements, function (el) { return el.required && !el.value.trim(); });
-    if (falta) { erro.textContent = 'Preencha todos os campos obrigatórios.'; falta.focus(); return; }
-    if (form.elements.cpf.value.replace(/\D/g, '').length !== 11) { erro.textContent = 'Confira o CPF.'; form.elements.cpf.focus(); return; }
-    if (!/\S+@\S+\.\S+/.test(form.elements.email.value)) { erro.textContent = 'Confira o e-mail.'; form.elements.email.focus(); return; }
-    var o = OBRAS[atual];
-    var dados = new URLSearchParams(new FormData(form));
-    dados.append('obra', o.nome);
-    dados.append('valor', o.valor + frete(o));
-    var btn = form.querySelector('.enviar');
-    btn.disabled = true; btn.textContent = 'Abrindo o pagamento...';
-    if (window.fbq) fbq('track', 'Lead', { content_name: o.nome, content_category: 'Fine Art', currency: 'BRL', value: o.valor });
-    if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: o.nome, content_category: 'Fine Art', currency: 'BRL', value: o.valor + frete(o), num_items: 1 });
-    var ir = function () { window.location.href = o.link; };
-    fetch(PLANILHA, { method: 'POST', mode: 'no-cors', body: dados }).then(ir, ir);
-    setTimeout(ir, 2500);
-  });
-})();
-</script>
+<script src="/js/loja.js"></script>
 
 </body>
 </html>

@@ -167,6 +167,7 @@
   #pedido .enviar:disabled { opacity:.6; cursor:wait; }
   #pedido .fechar { position:absolute; top:10px; right:10px; background:none; border:0; font-size:28px; line-height:1; color:#42283A; cursor:pointer; padding:6px 10px; }
 </style>
+<link rel="stylesheet" href="/js/loja.css">
 <!-- Meta Pixel -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -181,10 +182,16 @@ fbq('track', 'PageView');
 </head>
 <body>
 
-<!-- TOPO -->
-<header class="topo">
-  <div class="quina"></div>
-  <a class="marca" href="https://danijustus.art/">Dani Justus | Fotografia</a>
+<header class="menu">
+  <div class="menu-faixa">
+    <a class="menu-marca" href="/">Dani Justus</a>
+    <nav aria-label="Menu principal">
+      <a href="/#janelas">Janelas para o Rio</a>
+      <a href="/pages/cartasaomar">Cartas ao Mar</a>
+      <a href="/#estudio">Estúdio</a>
+    </nav>
+    <button type="button" class="menu-sacola" data-abrir-carrinho aria-label="Abrir carrinho"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span data-qtd style="display:none">0</span></button>
+  </div>
 </header>
 
 <!-- ABERTURA -->
@@ -397,11 +404,11 @@ fbq('track', 'PageView');
   </div>
   <div>
     <h3>Pagamento</h3>
-    <p>Pix ou cartão de crédito, em até 3 vezes, pelo Mercado Pago.</p>
+    <p>Pix direto no site ou cartão de crédito em até 3x sem juros.</p>
   </div>
   <div>
     <h3>Entrega</h3>
-    <p>Produção em até 7 dias + prazo de entrega dos Correios. Frete fixo de R$ 50 por caixa para todo o Brasil, ou retirada no estúdio.</p>
+    <p>Produção em até 7 dias + prazo de entrega dos Correios. Frete fixo para todo o Brasil: R$ 50 para uma obra, R$ 75 para duas, R$ 120 para três. Ou retirada no estúdio, sem frete.</p>
   </div>
 </section>
 
@@ -424,102 +431,7 @@ fbq('track', 'PageView');
 
 <a class="zap" data-contato="1" href="https://wa.me/5521998733496?text=Ol%C3%A1%21%20Vi%20as%20caixas%20de%20acr%C3%ADlico%20e%20quero%20saber%20mais." target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4a10.5 10.5 0 0 1-1.6-5.6C5.2 9.9 10 5.2 16 5.2s10.8 4.7 10.8 10.6S22 26.4 16 26.4zm5.9-7.9c-.3-.2-1.9-1-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.6 4.9 2.7 1.1 3.3.9 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.7-.5z"/></svg></a>
 
-<dialog id="pedido" aria-labelledby="pedido-titulo">
-  <button type="button" class="fechar" aria-label="Fechar">&times;</button>
-  <form id="pedido-form" novalidate>
-    <h2 id="pedido-titulo">Seu pedido</h2>
-    <p class="resumo" id="pedido-resumo"></p>
-    <label>Nome completo<input name="nome" autocomplete="name" required></label>
-    <div class="linha">
-      <label>CPF<input name="cpf" inputmode="numeric" placeholder="000.000.000-00" required></label>
-      <label>WhatsApp<input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(21) 99999-9999" required></label>
-    </div>
-    <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
-    <label style="max-width:200px;">CEP<input name="cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" required></label>
-    <div class="linha">
-      <label>Endereço<input name="endereco" autocomplete="address-line1" required></label>
-      <label class="estreito">Número<input name="numero" required></label>
-    </div>
-    <label>Complemento<input name="complemento" autocomplete="address-line2"></label>
-    <label>Bairro<input name="bairro" required></label>
-    <div class="linha">
-      <label>Cidade<input name="cidade" autocomplete="address-level2" required></label>
-      <label class="estreito">UF<input name="uf" maxlength="2" autocomplete="address-level1" required></label>
-    </div>
-    <p class="aviso">Frete fixo de R$ 50 para todo o Brasil. Produção em até 7 dias + prazo de entrega dos Correios. Na próxima tela você paga com Pix ou cartão pelo Mercado Pago.</p>
-    <p class="erro" id="pedido-erro" role="alert"></p>
-    <button type="submit" class="enviar">Ir para o pagamento</button>
-  </form>
-</dialog>
-
-<script>
-(function () {
-  var PLANILHA = 'https://script.google.com/macros/s/AKfycbwVMkxAPdDLWIR8yIAjF7bXVyx177gVL4NK6sFcbljflLOGwxq_wfMjYPsoJZ18zcMwXw/exec';
-  var LINK = 'https://mpago.li/2ra7G6K';
-  var VALOR = 900, FRETE = 50;
-  var dlg = document.getElementById('pedido');
-  var form = document.getElementById('pedido-form');
-  var erro = document.getElementById('pedido-erro');
-  var atual = null;
-  function brl(n) { return 'R$ ' + n.toLocaleString('pt-BR', { minimumFractionDigits: 2 }); }
-
-  document.addEventListener('click', function (e) {
-    var t = e.target.closest('.troca');
-    if (t) {
-      var i = t.querySelector('img');
-      var lado = i.getAttribute('src') === i.getAttribute('data-frente');
-      i.setAttribute('src', i.getAttribute(lado ? 'data-lado' : 'data-frente'));
-      return;
-    }
-    var b = e.target.closest('[data-comprar]');
-    if (b) {
-      atual = b.getAttribute('data-comprar');
-      document.getElementById('pedido-resumo').textContent =
-        atual + ': ' + brl(VALOR) + ' + ' + brl(FRETE) + ' de frete = ' + brl(VALOR + FRETE);
-      erro.textContent = '';
-      dlg.showModal();
-      if (window.fbq) fbq('track', 'AddToCart', { content_name: 'Janelas para o Rio: ' + atual, content_category: 'Fine Art', currency: 'BRL', value: VALOR });
-      return;
-    }
-    if (!window.fbq) return;
-    if (e.target.closest('[data-contato]')) fbq('track', 'Contact', { content_name: 'WhatsApp' });
-    if (e.target.closest('[data-visita]')) fbq('track', 'Schedule', { content_name: 'Visita ao estúdio' });
-  });
-  dlg.querySelector('.fechar').addEventListener('click', function () { dlg.close(); });
-
-  var cep = form.elements.cep;
-  cep.addEventListener('blur', function () {
-    var c = cep.value.replace(/\D/g, '');
-    if (c.length !== 8) return;
-    fetch('https://viacep.com.br/ws/' + c + '/json/').then(function (r) { return r.json(); }).then(function (d) {
-      if (d.erro) return;
-      if (!form.elements.endereco.value) form.elements.endereco.value = d.logradouro || '';
-      if (!form.elements.bairro.value) form.elements.bairro.value = d.bairro || '';
-      form.elements.cidade.value = d.localidade || form.elements.cidade.value;
-      form.elements.uf.value = d.uf || form.elements.uf.value;
-      form.elements.numero.focus();
-    }).catch(function () {});
-  });
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var falta = Array.prototype.find.call(form.elements, function (el) { return el.required && !el.value.trim(); });
-    if (falta) { erro.textContent = 'Preencha todos os campos obrigatórios.'; falta.focus(); return; }
-    if (form.elements.cpf.value.replace(/\D/g, '').length !== 11) { erro.textContent = 'Confira o CPF.'; form.elements.cpf.focus(); return; }
-    if (!/\S+@\S+\.\S+/.test(form.elements.email.value)) { erro.textContent = 'Confira o e-mail.'; form.elements.email.focus(); return; }
-    var dados = new URLSearchParams(new FormData(form));
-    dados.append('obra', 'Janelas para o Rio: ' + atual);
-    dados.append('valor', VALOR + FRETE);
-    var btn = form.querySelector('.enviar');
-    btn.disabled = true; btn.textContent = 'Abrindo o pagamento...';
-    if (window.fbq) fbq('track', 'Lead', { content_name: 'Janelas para o Rio: ' + atual, content_category: 'Fine Art', currency: 'BRL', value: VALOR });
-    if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: 'Janelas para o Rio: ' + atual, content_category: 'Fine Art', currency: 'BRL', value: VALOR + FRETE, num_items: 1 });
-    var ir = function () { window.location.href = LINK; };
-    fetch(PLANILHA, { method: 'POST', mode: 'no-cors', body: dados }).then(ir, ir);
-    setTimeout(ir, 2500);
-  });
-})();
-</script>
+<script src="/js/loja.js"></script>
 
 </body>
 </html>
