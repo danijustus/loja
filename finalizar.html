@@ -170,8 +170,6 @@ fbq('track', 'PageView');
     desenharResumo();
   });
   desenharResumo();
-  var inicio = contas();
-  if (inicio.c.length && window.fbq) fbq('track', 'InitiateCheckout', { content_category: 'Fine Art', currency: 'BRL', value: inicio.t.total, num_items: inicio.t.itens });
 
   var cep = form.elements.cep;
   cep.addEventListener('blur', function () {
@@ -235,6 +233,7 @@ fbq('track', 'PageView');
     btn.disabled = true; btn.textContent = 'Enviando...';
     if (window.fbq) {
       fbq('track', 'Lead', { content_name: lista, content_category: 'Fine Art', currency: 'BRL', value: x.t.total });
+      fbq('track', 'InitiateCheckout', { content_category: 'Fine Art', currency: 'BRL', value: x.t.total, num_items: x.t.itens });
       fbq('track', 'AddPaymentInfo', { content_category: 'Fine Art', currency: 'BRL', value: x.t.total, payment_type: pagamento });
     }
 
